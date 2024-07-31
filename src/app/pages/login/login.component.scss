@@ -1,0 +1,124 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  .titulo-login {
+    background-color: #494597;
+    text-align: center;
+    padding: 1rem;
+    h1 {
+      color: #fff;
+      margin: 2rem;
+      font-size: 2rem;
+      font-weight:bold;
+    }
+    p{
+      color: #fff;
+    }
+  }
+
+  .login {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+
+    .form-login {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #494597;
+      padding: 2rem;
+
+      .card {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 1rem;
+        padding: 2rem;
+        background: #fff;
+
+        h2 {
+          font-size: 2rem;
+          color: #333;
+          text-align: center;
+          margin: 0;
+        }
+
+        .form-control {
+          border: 2px solid #6c63ff;
+          border-radius: 0.5rem;
+          padding: 0.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .form-buttons {
+          display: flex;
+          gap: 1rem;
+          .btn {
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+
+          .btn-entrar {
+            color: #fff;
+            background: #6c63ff;
+            flex: 1;
+          }
+
+          .btn-criar-conta {
+            background: #fff;
+            color: #6c63ff;
+            border: 2px solid #6c63ff;
+            flex: 1;
+          }
+        }
+        .link-recuperar-senha {
+          color: #333;
+          &:hover {
+            color: #5955e4;
+          }
+        }
+      }
+    }
+
+    .img-login {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #494597;
+
+      img {
+        max-width: 100%;
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .login {
+      flex-direction: column;
+      .form-login {
+        order: 2;
+        padding: 1rem;
+      }
+
+      .img-login {
+        order: 1;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
