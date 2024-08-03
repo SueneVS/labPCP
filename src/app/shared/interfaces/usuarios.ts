@@ -4,4 +4,5 @@ export interface UsuariosInterface {
   usuario: string;
   senha: string;
   perfil: 'Administrador' | 'Docente' | 'Aluno';
+  img: string;
 }

@@ -26,7 +26,7 @@ export class LoginComponent {
           sessionStorage.setItem('user', JSON.stringify({
             id: user.id,
             nome: user.nome,
-            perfil: user.perfil
+            perfil: user.perfil,
           }));
 
           setTimeout(() => {
@@ -52,13 +52,9 @@ export class LoginComponent {
       if (bootstrapModal) {
         const modal = new bootstrapModal(modalElement);
         modal.show();
-      } else {
-        console.error('Bootstrap Modal não encontrado. Verifique se o Bootstrap está carregado.');
       }
-    } else {
-      console.error('Modal não encontrado. Verifique o ID do modal.');
-    }
   }
+}
 
   mensagemErro() {
     const errorPopup = document.getElementById('error-popup');

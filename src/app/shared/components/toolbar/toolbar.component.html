@@ -1,0 +1,20 @@
+<nav class="toolbar">
+  <div>
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="container-fluid">
+    <div class="toolbar-center">
+      <span class="toolbar-titulo">
+        {{ tituloDaPagina }}
+      </span>
+    </div>
+
+    <div class="toolbar-usuario">
+      <div class="toolbar-info">
+        <span>Olá, <span class="toolbar-info-name">{{ nomeUsuario }}</span></span>
+        <p class="toolbar-info-perfil">{{ perfilUsuario }}</p>
+      </div>
+      <img [src]="imgUsuario" class="toolbar-img" alt="Imagem do usuário" *ngIf="imgUsuario">
+    </div>
+  </div>
+</nav>

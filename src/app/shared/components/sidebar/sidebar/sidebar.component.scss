@@ -1,11 +1,10 @@
-
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   width: 250px;
   height: 100%;
-  background-color: #494597;;
+  background-color: #494597;
   border-right: 1px solid #ddd;
   transition: transform 0.3s ease;
   z-index: 1000;
@@ -26,7 +25,6 @@
   font-weight: bold;
   color: #fff;
   margin-left: 1.5rem;
-  margin-top: 5rem;
 }
 
 .nav-item {
@@ -34,8 +32,8 @@
   padding: 0;
 }
 
-.topicos{
-  color: #fff;;
+.topicos {
+  color: #fff;
   padding-left: 2.5rem;
   padding-top: 2rem;
   font-weight: bolder;
@@ -47,10 +45,8 @@
   margin: 0 1rem 1rem 1rem;
   font-size: 1rem;
   font-weight: bold;
-  color:#494597;;
+  color: #494597;
   background: #ddd;
-
-
   text-decoration: none;
   border-radius: 0.25rem;
   &:hover {
@@ -58,8 +54,8 @@
   }
 }
 
-.btn-sair{
- margin-top: 5rem;
+.btn-sair {
+  margin-top: 5rem;
 }
 
 .toggle-sidebar {
@@ -69,11 +65,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #494597;;
+  background-color: #494597;
   color: #fff;
   font-size: 1.25rem;
   border: none;
-  margin-top: 1rem;
-  margin-left: 12rem;
-  z-index: 1100;
+  position: absolute;
+  left: 1rem;
+  z-index: 1500;
 }

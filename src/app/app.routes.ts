@@ -12,32 +12,47 @@ import { NotasComponent } from './pages/notas/notas.component';
 export const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    data: { title: 'Login' }
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    data: { title: 'Início' }
   },
   {
     path: 'cadastro-docente',
-    component: CadastroDocenteComponent },
+    component: CadastroDocenteComponent,
+    data: { title: 'Cadastro de Docente' }
+  },
   {
     path: 'cadastro-aluno',
-    component: CadastroAlunoComponent },
+    component: CadastroAlunoComponent,
+    data: { title: 'Cadastro de Aluno' }
+  },
   {
     path: 'cadastro-turma',
-    component: CadastroTurmaComponent },
+    component: CadastroTurmaComponent,
+    data: { title: 'Cadastro de Turma' }
+  },
   {
     path: 'cadastro-notas',
-    component: CadastroNotasComponent },
+    component: CadastroNotasComponent,
+    data: { title: 'Cadastro de Notas' }
+  },
   {
     path: 'listagem-docentes',
-    component: ListagemDocentesComponent },
+    component: ListagemDocentesComponent,
+    data: { title: 'Lista de Docentes' }
+  },
   {
     path: 'notas',
-    component: NotasComponent },
+    component: NotasComponent,
+    data: { title: 'Notas' }
+  },
   {
     path: '**',
-    component: LoginComponent
+    component: LoginComponent,
+    data: { title: 'Login' }
   },
 ];

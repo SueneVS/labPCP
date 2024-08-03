@@ -1,0 +1,58 @@
+.toolbar {
+  background: #494597;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.toolbar-titulo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.toolbar-usuario{
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.toolbar-info {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  margin-right: 0.5rem;
+  color:#fff;
+  margin-right: 1rem;
+}
+
+.toolbar-info-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+
+}
+
+.toolbar-info-perfil {
+  font-size: 0.875rem;
+  color: #fff;
+  margin: 0;
+}
+
+.toolbar-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
