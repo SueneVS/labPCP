@@ -1,55 +1,54 @@
-<section class="login-container">
-  <div class="titulo-login">
-    <h1>Bem-vindo ao LabPCP!</h1>
-    <p>Sistema para gestão de processos educacionais</p>
-  </div>
+<div class="login-container">
   <div class="login">
-    <div class="form-login">
-      <div class="card shadow-sm p-4">
-        <h2>Login</h2>
-        <form #atividadeLogin="ngForm">
-          <div class="form-group mb-3">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              [(ngModel)]="login.email"
-              #email="ngModel"
-              [ngModelOptions]="{standalone: true}"
-              placeholder="Email">
-          </div>
-          <div class="form-group mb-3">
-            <label for="senha">Senha</label>
-            <input
-              type="password"
-              class="form-control"
-              id="senha"
-              [(ngModel)]="login.senha"
-              #senha="ngModel"
-              [ngModelOptions]="{standalone: true}"
-              placeholder="Senha">
-          </div>
-          <div class="mb-3 text-end">
-            <a href="#" class="link-recuperar-senha" (click)="emConstrucao()">Esqueci a senha</a>
-          </div>
-          <div class="form-buttons">
-            <button type="button" class="btn btn-entrar w-100" (click)="entrar()">Entrar</button>
-            <button type="button" class="btn btn-criar-conta w-50" (click)="emConstrucao()">Criar Conta</button>
-          </div>
-        </form>
-
-        <div id="error-popup" class="alert alert-danger" role="alert" style="display: none; position: absolute; top: 20px; right: 20px;">
-          Usuário e/ou senha incorretos
-        </div>
-
+    <section class="form-login-container">
+      <div class="titulo-login">
+        <h1>Bem-vindo ao LabPCP!</h1>
+        <p>Sistema para gestão de processos educacionais</p>
       </div>
-    </div>
-    <div class="img-login">
-      <img src="login.png" alt="Desenhos de pessoas fazendo login">
-    </div>
+      <div class="form-login">
+        <div class="card-form shadow-sm p-4">
+          <h2>Login</h2>
+          <form #atividadeLogin="ngForm">
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                [(ngModel)]="login.email"
+                #email="ngModel"
+                [ngModelOptions]="{standalone: true}"
+                placeholder="Email">
+            </div>
+            <div class="form-group mb-3">
+              <label for="senha">Senha</label>
+              <input
+                type="password"
+                class="form-control"
+                id="senha"
+                [(ngModel)]="login.senha"
+                #senha="ngModel"
+                [ngModelOptions]="{standalone: true}"
+                placeholder="Senha">
+            </div>
+            <div class="mb-3 text-end">
+              <a href="#" class="link-recuperar-senha" (click)="emConstrucao()">Esqueci a senha</a>
+            </div>
+            <div class="form-buttons">
+              <button type="button" class="btn btn-entrar w-100" (click)="entrar()">Entrar</button>
+              <button type="button" class="btn btn-criar-conta w-50" (click)="emConstrucao()">Criar Conta</button>
+            </div>
+          </form>
+          <div id="error-popup" class="alert alert-danger" role="alert" style="display: none; position: absolute; top: 20px; right: 20px;">
+            Usuário e/ou senha incorretos
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="img-login">
+      <img src="login1.png" alt="Desenho de um grupo de pessoas estudando">
+    </section>
   </div>
-
   <div class="modal fade" id="underConstructionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -66,5 +65,4 @@
       </div>
     </div>
   </div>
-
-</section>
+</div>
