@@ -1,14 +1,14 @@
 <nav class="toolbar">
-  <div>
-    <app-sidebar></app-sidebar>
-  </div>
-  <div class="container-fluid">
+  <app-sidebar class="toolbar-sidebar"></app-sidebar>
+  <div class="toolbar-content">
+    <div class="toolbar-logo">
+      <img src="logo.png" alt="Desenho de um grupo de pessoas estudando">
+    </div>
     <div class="toolbar-center">
       <span class="toolbar-titulo">
         {{ tituloDaPagina }}
       </span>
     </div>
-
     <div class="toolbar-usuario">
       <div class="toolbar-info">
         <span>Olá, <span class="toolbar-info-name">{{ nomeUsuario }}</span></span>

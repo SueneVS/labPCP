@@ -1,60 +1,43 @@
-
 <nav id="sidebarMenu" class="sidebar" [ngClass]="{'show': sidebarOpen}">
-    <div class="position-sticky">
+  <div class="position-sticky">
       <h3 class="menu-title">Menu</h3>
       <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/home">
-            Início
-          </a>
-        </li>
-        <div *ngIf="Admin() || Docente()" class="topicos">
-          <p>Cadastros</p>
-        </div>
-        <li *ngIf="Admin()" class="nav-item">
-          <a class="nav-link" routerLink="/cadastro-docente">
-            Cadastrar Docente
-          </a>
-        </li>
-        <li *ngIf="Admin()" class="nav-item">
-          <a class="nav-link" routerLink="/cadastro-aluno">
-            Cadastrar Aluno
-          </a>
-        </li>
-        <li *ngIf="Admin() || Docente()" class="nav-item">
-          <a class="nav-link" routerLink="/cadastro-turma">
-            Cadastrar Turma
-          </a>
-        </li>
-        <li *ngIf="Admin() || Docente()" class="nav-item">
-          <a class="nav-link" routerLink="/cadastro-notas">
-            Cadastrar Notas
-          </a>
-        </li>
-        <div *ngIf="Admin() || Aluno()" class="topicos">
-          <p>Detalhamentos</p>
-        </div>
-        <li *ngIf="Admin()" class="nav-item">
-          <a class="nav-link" routerLink="/listagem-docentes">
-            Listagem de Docentes
-          </a>
-        </li>
-        <li *ngIf="Aluno()" class="nav-item">
-          <a class="nav-link" routerLink="/notas">
-            Notas do Aluno
-          </a>
-        </li>
-        <div class="btn-sair">
           <li class="nav-item">
-            <a class="nav-link" href="#" (click)="logout()">
-              Sair
-            </a>
+              <a class="nav-link active" aria-current="page" routerLink="/home">Início</a>
           </li>
-        </div>
+          <div *ngIf="Admin() || Docente()" class="topicos">
+              <p>Cadastros</p>
+          </div>
+          <li *ngIf="Admin()" class="nav-item">
+              <a class="nav-link" routerLink="/cadastro-docente">Cadastrar Docente</a>
+          </li>
+          <li *ngIf="Admin()" class="nav-item">
+              <a class="nav-link" routerLink="/cadastro-aluno">Cadastrar Aluno</a>
+          </li>
+          <li *ngIf="Admin() || Docente()" class="nav-item">
+              <a class="nav-link" routerLink="/cadastro-turma">Cadastrar Turma</a>
+          </li>
+          <li *ngIf="Admin() || Docente()" class="nav-item">
+              <a class="nav-link" routerLink="/cadastro-notas">Cadastrar Notas</a>
+          </li>
+          <div *ngIf="Admin() || Aluno()" class="topicos">
+              <p>Detalhamentos</p>
+          </div>
+          <li *ngIf="Admin()" class="nav-item">
+              <a class="nav-link" routerLink="/listagem-docentes">Listagem de Docentes</a>
+          </li>
+          <li *ngIf="Aluno()" class="nav-item">
+              <a class="nav-link" routerLink="/notas">Notas do Aluno</a>
+          </li>
       </ul>
-    </div>
-  </nav>
-  <button class="btn btn-primary toggle-sidebar" type="button" (click)="toggleSidebar()">
-    <span *ngIf="sidebarOpen" class="bi bi-x"></span>
-    <span *ngIf="!sidebarOpen" class="bi bi-list"></span>
-  </button>
+      <div class="btn-sair">
+          <li class="nav-item">
+              <a class="nav-link" href="#" (click)="logout()">Sair</a>
+          </li>
+      </div>
+  </div>
+</nav>
+<button class="btn btn-primary toggle-sidebar" type="button" (click)="toggleSidebar()">
+  <span *ngIf="sidebarOpen" class="bi bi-x"></span>
+  <span *ngIf="!sidebarOpen" class="bi bi-list"></span>
+</button>

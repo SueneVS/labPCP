@@ -1,14 +1,17 @@
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   width: 250px;
-  height: 100%;
-  background-color: #494597;
-  border-right: 1px solid #ddd;
+  height: 100vh;
+  background-color: #24535f;
   transition: transform 0.3s ease;
   z-index: 1000;
   transform: translateX(-100%);
+
   &.show {
     transform: translateX(0);
   }
@@ -17,6 +20,7 @@
 .position-sticky {
   position: sticky;
   top: 0;
+  overflow-y: auto;
 }
 
 .menu-title {
@@ -34,28 +38,30 @@
 
 .topicos {
   color: #fff;
-  padding-left: 2.5rem;
-  padding-top: 2rem;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
   font-weight: bolder;
 }
 
 .nav-link {
   display: block;
-  padding: 0.75rem 1.25rem;
-  margin: 0 1rem 1rem 1rem;
-  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 1rem;
+  font-size: 0.875rem;
   font-weight: bold;
-  color: #494597;
+  color: #24535f;
   background: #ddd;
   text-decoration: none;
   border-radius: 0.25rem;
+
   &:hover {
     background-color: #e9ecef;
   }
 }
 
 .btn-sair {
-  margin-top: 5rem;
+  margin-top: auto;
+  margin-bottom: 1rem;
 }
 
 .toggle-sidebar {
@@ -65,11 +71,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #494597;
+  background-color: #24535f;
   color: #fff;
   font-size: 1.25rem;
   border: none;
-  position: absolute;
+  position: fixed;
+  top: 1rem;
   left: 1rem;
   z-index: 1500;
+  transition: left 0.3s ease;
+}
+
+.sidebar.show ~ .toggle-sidebar {
+  left: calc(250px - 2.5rem);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+  .sidebar.show ~ .toggle-sidebar {
+    left: calc(200px - 2.5rem);
+  }
+
+  .toggle-sidebar {
+    left: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 150px;
+  }
+  .sidebar.show ~ .toggle-sidebar {
+    left: calc(150px - 2.5rem);
+  }
 }
