@@ -3,40 +3,30 @@
   padding: 1rem;
   border-bottom: 1px solid #dee2e6;
   display: flex;
-  flex-direction: row; // Mantenha a estrutura em linha para telas maiores
   align-items: center;
   position: relative;
-  flex-wrap: nowrap; // Manter os itens na mesma linha
-
-  .toolbar-sidebar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 250px; // Ajuste conforme necessário
-    background: #24535f;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-  }
 
   .toolbar-content {
     display: flex;
     flex: 1;
-    margin-left: 250px; // Ajusta o espaço para o sidebar
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap; // Manter os itens na mesma linha
+    justify-content:space-between;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .toolbar-sidebar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     .toolbar-logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex: 1;
       img {
-        width: 120px; // Ajuste o valor conforme necessário para diminuir a imagem
-        height: auto; // Mantém a proporção da imagem
+        width: 120px;
+        height: auto;
       }
     }
 
@@ -44,7 +34,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      flex: 2; // Dá mais espaço para o título
       text-align: center;
       .toolbar-titulo {
         font-size: 1.25rem;
@@ -57,8 +46,6 @@
     .toolbar-usuario {
       display: flex;
       align-items: center;
-      justify-content: end;
-      flex: 1;
       .toolbar-info {
         display: flex;
         flex-direction: column;
@@ -85,19 +72,38 @@
     }
   }
 
-  @media (max-width: 768px) {
-    flex-direction: column;
 
-    .toolbar-sidebar {
-      position: static;
-      width: 100%;
-      height: auto;
-    }
+  @media (max-width: 576px) {
+    .toolbar-content{
+      .toolbar-logo {
+        margin-left: auto;
+        img {
+          width: 80px;
+        }
+      }
+      .toolbar-center{
+        margin-left: auto;
+        .toolbar-titulo{
+          font-size: 0.875rem;
+        }
+      }
+      .toolbar-usuario {
+        margin-left: auto;
+        .toolbar-info {
+          .toolbar-info-name {
+            font-size: 0.75rem;
 
-    .toolbar-content {
-      margin-left: 0;
-      flex-direction: column;
-      width: 100%;
+          }
+          .toolbar-info-perfil {
+            font-size: 0.7rem;
+          }
+        }
+        .toolbar-img {
+          width: 32px;
+          height: 32px;
+        }
+      }
     }
   }
 }
+

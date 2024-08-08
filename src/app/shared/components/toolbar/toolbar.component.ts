@@ -3,12 +3,13 @@ import { Title } from '@angular/platform-browser';
 import { UsuariosService } from '../../services/usuarios/usuarios.service';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from "../sidebar/sidebar/sidebar.component";
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-toolbar',
   standalone: true,
-  imports: [CommonModule, SidebarComponent],
+  imports: [CommonModule, SidebarComponent, RouterLink],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.scss'
 })
