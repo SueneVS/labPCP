@@ -1,0 +1,130 @@
+.home-btn {
+  background-color: #3d7f8f;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem 0 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #58a3b6;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+.home-estatistica {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.home-cards-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  width: 100%;
+  padding-top: 2rem;
+}
+
+.home-card-estatistica {
+  background-color: #24535f12;
+  border-radius: 30%;
+  text-align: center;
+  padding: 1rem;
+  color: #24535f;
+  max-width: 250px;
+  height: 250px;
+  flex: 1;
+  align-content: center;
+  font-weight: bold;
+  box-shadow: 0 2px 4px #58a3b6;
+}
+
+span {
+  color: rgb(255, 140, 0);
+  font-size: 2rem;
+}
+
+.home-pesquisa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  width: 100%;
+
+  label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  input {
+    max-width: 25%;
+  }
+}
+
+.home-lista-alunos {
+  text-align: center;
+  margin-top: 4rem;
+
+
+  .home-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 4rem 0;
+    width: 100%;
+  }
+
+  .home-card-aluno {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px #58a3b6;
+    transition: box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 200px;
+    max-width: 220px;
+
+    &:hover {
+      box-shadow: 0 4px 8px #58a3b6;
+    }
+
+    .home-card-aluno-img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .home-card-aluno-info {
+      text-align: center;
+
+      h4 {
+        margin: 0;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      p {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+        color: #666;
+      }
+    }
+  }
+}
+
+

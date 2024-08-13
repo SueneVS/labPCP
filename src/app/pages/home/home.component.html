@@ -1,2 +1,65 @@
 <app-toolbar></app-toolbar>
-<p>home works!</p>
+<div>
+  <div *ngIf="Admin()">
+    <section class="home-estatistica">
+      <div>
+        <h2>Estatísticas</h2>
+      </div>
+      <div class="home-cards-container">
+        <div class="home-card-estatistica">
+          <span>{{totalAlunos}}</span>
+          <p>Alunos</p>
+        </div>
+        <div class="home-card-estatistica">
+          <span>{{totalTurmas}}</span>
+          <p>Turmas</p>
+        </div>
+        <div class="home-card-estatistica">
+          <span>{{totalDocentes}}</span>
+          <p>Docentes</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="row mt-4">
+    <div class="col-12 home-pesquisa">
+      <label for="pesquisaAluno">Pesquisar aluno:</label>
+      <input
+      type="text"
+      id="pesquisaAluno"
+      class="form-control"
+      placeholder="Buscar por nome, telefone ou e-mail..."
+      [(ngModel)]="buscarPorAluno"
+      >
+      <button class="home-btn" (click)="buscarAluno()">Pesquisar</button>
+      <button class="home-btn" (click)="verTodosAlunos()">Ver todos os alunos</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="home-lista-alunos">
+      <h2>Listagem de Alunos</h2>
+        <div *ngIf="filterAlunos.length > 0; else noResults">
+          <div class="home-cards-container">
+            <div class="home-card-aluno" *ngFor="let aluno of filterAlunos">
+              <img [src]="aluno.img" alt="{{ aluno.nome }}" class="home-card-aluno-img">
+              <div class="home-card-aluno-info">
+                <h4>{{ aluno.nome }}</h4>
+                <p>Idade: {{ aluno.idade }}</p>
+                <p>Email: {{ aluno.email }}</p>
+                <button *ngIf="Admin()" class="home-btn">
+                  <a routerLink="/cadastro-aluno">Ver mais</a>
+                </button>
+                <button *ngIf="Docente()" class="home-btn">
+                  <a routerLink="/cadastro-notas">Lançar nota</a>
+                </button>
+              </div>
+          </div>
+          </div>
+        </div>
+        <ng-template #noResults>
+          <p>Aluno não encontrado</p>
+        </ng-template>
+    </div>
+  </section>
