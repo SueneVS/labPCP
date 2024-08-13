@@ -24,6 +24,24 @@ export class HomeComponent implements OnInit {
   buscarPorAluno: string = '';
   userPerfil: string | null = null;
 
+  avaliacoes = [
+    { id: 1, nome: 'Avaliação 1', materia: 'HTML', data: new Date() },
+    { id: 2, nome: 'Avaliação 2', materia: 'CSS', data: new Date() },
+    { id: 3, nome: 'Avaliação 3', materia: 'JavaScript', data: new Date() }
+  ];
+
+  materiasAtuais = [
+    { nome: 'HTML' },
+    { nome: 'CSS' },
+    { nome: 'JavaScript' }
+  ];
+
+  materiasExtras = [
+    { nome: 'TypeScript' },
+    { nome: 'Angular' },
+    { nome: 'React' }
+  ];
+
   constructor(private titleService: Title, private usuariosService: UsuariosService, private turmasService: TurmasService) {}
 
   ngOnInit(): void {
@@ -62,7 +80,7 @@ export class HomeComponent implements OnInit {
   }
   verTodosAlunos() {
     this.filterAlunos = this.alunos;
-    this.buscarPorAluno = ''; 
+    this.buscarPorAluno = '';
   }
 
   Admin(): boolean {

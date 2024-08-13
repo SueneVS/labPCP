@@ -17,12 +17,18 @@
     color: #fff;
   }
 }
+
+span {
+  color: rgb(255, 140, 0);
+  font-size: 2rem;
+}
+
 .home-estatistica {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  margin-top: 4rem;
+  margin: 4rem 1rem 0 1rem;
 }
 
 .home-cards-container {
@@ -47,11 +53,6 @@
   box-shadow: 0 2px 4px #58a3b6;
 }
 
-span {
-  color: rgb(255, 140, 0);
-  font-size: 2rem;
-}
-
 .home-pesquisa {
   display: flex;
   align-items: center;
@@ -72,7 +73,6 @@ span {
 .home-lista-alunos {
   text-align: center;
   margin-top: 4rem;
-
 
   .home-cards-container {
     display: flex;
@@ -127,4 +127,198 @@ span {
   }
 }
 
+.home-avaliacoes {
+  margin: 4rem 4rem 0 4rem;
+  text-align: center;
 
+  table {
+    margin-top: 4rem;
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      background-color: #24535f;
+      color: #fff;
+
+      th {
+        padding: 1rem;
+        border: 1px solid #ddd;
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: #f9f9f9;
+        }
+
+        td {
+          padding: 1rem;
+          border: 1px solid #ddd;
+
+          a {
+            color: #3d7f8f;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.home-materias,
+.home-materias-extras {
+  margin-top: 4rem;
+  text-align: center;
+
+  .home-card-materia {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px #58a3b6;
+    transition: box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 200px;
+    max-width: 220px;
+
+    &:hover {
+      box-shadow: 0 4px 8px #58a3b6;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 1rem;
+      color: #333;
+    }
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .home-estatistica {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .home-cards-container {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+  }
+
+  .home-card-estatistica {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .home-pesquisa {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+
+
+    input {
+      max-width: 100%;
+      margin-top: 1rem;
+      margin-left: 1rem;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 1rem;
+      margin-left: 1rem;
+    }
+  }
+
+  .home-lista-alunos {
+    .home-cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .home-card-aluno {
+      width: 50%;
+      max-width: 50%;
+    }
+  }
+  .home-avaliacoes {
+    margin: 1.5rem;
+    text-align: center;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .home-pesquisa {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+
+
+    input {
+      max-width: 100%;
+      margin-top: 0.5rem;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 0.5rem;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+  }
+
+  .home-lista-alunos {
+    .home-card-aluno {
+      width: 50%;
+      max-width: 40%;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-pesquisa {
+    input {
+      max-width: 40%;
+    }
+
+    button {
+      margin: 0.5rem;
+    }
+  }
+
+  .home-cards-container {
+    gap: 1rem;
+  }
+
+  .home-card-estatistica {
+    max-width: 12.5rem;
+    height: 12.5rem;
+  }
+
+  .home-lista-alunos {
+    .home-cards-container {
+      gap: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .home-pesquisa {
+    input {
+      max-width: 25%;
+    }
+  }
+}
