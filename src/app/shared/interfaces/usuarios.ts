@@ -1,8 +1,10 @@
 export interface UsuariosInterface {
   id: number;
   nome: string;
-  usuario: string;
+  email: string;
   senha: string;
+  celular: number;
+  idade: number;
   perfil: 'Administrador' | 'Docente' | 'Aluno';
   img: string;
 }
