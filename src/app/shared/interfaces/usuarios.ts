@@ -13,3 +13,8 @@ export interface Docente {
   id: string;
   nome: string;
 }
+
+export interface Aluno {
+  id: string;
+  nome: string;
+}

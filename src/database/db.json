@@ -64,47 +64,44 @@
   "turmas": [
     {
       "id": "1",
-      "turma": "FrontEnd"
+      "nome": "FrontEnd"
     },
     {
       "id": "2",
-      "turma": "FullStack"
+      "nome": "FullStack"
     },
     {
       "id": "3",
-      "turma": "BackEnd"
+      "nome": "BackEnd"
     }
   ],
   "materias": [
     {
       "id": "1",
-      "materia": "HTML"
+      "nome": "HTML"
     },
     {
       "id": "2",
-      "materia": "CSS"
+      "nome": "CSS"
     },
     {
       "id": "3",
-      "materia": "Angular"
+      "nome": "Angular"
     },
     {
       "id": "4",
-      "materia": "React"
+      "nome": "React"
     },
     {
       "id": "5",
-      "materia": "JavaScript"
+      "nome": "JavaScript"
     },
     {
       "id": "6",
-      "materia": "TypeScript"
+      "nome": "TypeScript"
     }
   ],
-  "cadastro-docente": [
-
-  ],
-  "cadastro-aluno": [
-
-  ]
+  "cadastro-docente": [],
+  "cadastro-aluno": [],
+  "cadastro-notas": []
 }

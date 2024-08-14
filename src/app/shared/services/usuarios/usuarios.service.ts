@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Docente, UsuariosInterface } from '../../interfaces/usuarios';
+import { Aluno, Docente, UsuariosInterface } from '../../interfaces/usuarios';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
@@ -35,6 +35,10 @@ export class UsuariosService {
 
   getDocentes(): Observable<Docente[]> {
     return this.httpClient.get<Docente[]>(`${this.apiUrl}?perfil=Docente`);
+  }
+
+  getAluno(): Observable<Aluno[]> {
+    return this.httpClient.get<Aluno[]>(`${this.apiUrl}?perfil=Aluno`);
   }
 
 
