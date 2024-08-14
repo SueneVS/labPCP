@@ -1,0 +1,39 @@
+.container {
+  max-width: 50%;
+  background-color: #24535f4e;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.text-danger {
+  font-size: 0.875em;
+}
+
+button {
+  margin-right: 1rem;
+}
+
+.cadastro-btn {
+  background-color: #3d7f8f;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem 0 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #58a3b6;
+  }
+}
+
+.cadastro-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
