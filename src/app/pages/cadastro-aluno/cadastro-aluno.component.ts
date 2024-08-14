@@ -73,7 +73,6 @@ export class CadastroAlunoComponent implements OnInit {
       const userObj = JSON.parse(user);
       this.userPerfil = userObj.perfil;
     }
-    console.log('User Perfil:', this.userPerfil);
   }
 
   buscarEndereco(): void {
@@ -103,7 +102,6 @@ export class CadastroAlunoComponent implements OnInit {
 
   onSubmit(): void {
     if (this.formCadastro.valid) {
-      console.log('Formulário válido:', this.formCadastro.value);
       const url = 'http://localhost:3000/cadastro-aluno';
       const formData = this.formCadastro.value;
 
@@ -126,7 +124,6 @@ export class CadastroAlunoComponent implements OnInit {
         alert('Cadastro realizado com sucesso!');
       })
       .catch(error => {
-        console.error('Erro ao realizar o cadastro:', error);
         alert('Erro ao realizar o cadastro. Tente novamente.');
       });
     } else {
@@ -138,10 +135,6 @@ export class CadastroAlunoComponent implements OnInit {
   checkFormErrors(): void {
     Object.keys(this.formCadastro.controls).forEach(field => {
       const control = this.formCadastro.get(field);
-      if (control?.invalid) {
-        console.log(`${field} é inválido`);
-        console.log(control.errors);
-      }
     });
   }
 

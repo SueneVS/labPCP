@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UsuariosInterface } from '../../interfaces/usuarios';
+import { Docente, UsuariosInterface } from '../../interfaces/usuarios';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
@@ -32,7 +32,12 @@ export class UsuariosService {
   getAlunos(): Observable<Array<UsuariosInterface>> {
     return this.httpClient.get<Array<UsuariosInterface>>(`${this.apiUrl}?perfil=Aluno`);
   }
-  
+
+  getDocentes(): Observable<Docente[]> {
+    return this.httpClient.get<Docente[]>(`${this.apiUrl}?perfil=Docente`);
+  }
+
+
   postUsuario(usuario: UsuariosInterface) {
     return this.httpClient.post<any>(this.apiUrl, usuario);
   }

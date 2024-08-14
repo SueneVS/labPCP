@@ -8,3 +8,8 @@ export interface UsuariosInterface {
   perfil: 'Administrador' | 'Docente' | 'Aluno';
   img: string;
 }
+
+export interface Docente {
+  id: string;
+  nome: string;
+}

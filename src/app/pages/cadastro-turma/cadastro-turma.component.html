@@ -1,2 +1,54 @@
 <app-toolbar></app-toolbar>
-<p>cadastro-turma works!</p>
+
+<div *ngIf="Admin() || Docente()"class="container mt-5">
+  <h2>Cadastro de Turma</h2>
+  <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nomeTurma">Nome da Turma</label>
+      <input type="text" id="nomeTurma" class="form-control" formControlName="nomeTurma">
+      <div *ngIf="formCadastro.get('nomeTurma')?.invalid && (formCadastro.get('nomeTurma')?.touched)" class="text-danger">
+        Nome da Turma é obrigatório e deve ter entre 8 e 64 caracteres.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dataInicio">Data de Início</label>
+      <input type="date" id="dataInicio" class="form-control" formControlName="dataInicio">
+      <div *ngIf="formCadastro.get('dataInicio')?.invalid && (formCadastro.get('dataInicio')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dataTermino">Data de Término</label>
+      <input type="date" id="dataTermino" class="form-control" formControlName="dataTermino">
+      <div *ngIf="formCadastro.get('dataTermino')?.invalid && (formCadastro.get('dataTermino')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="horarioTurma">Horário da Turma</label>
+      <input type="time" id="horarioTurma" class="form-control" formControlName="horarioTurma">
+      <div *ngIf="formCadastro.get('horarioTurma')?.invalid && (formCadastro.get('horarioTurma')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="docente">Docente</label>
+      <select id="docente" formControlName="docente" class="form-control" [attr.disabled]="userPerfil === 'Docente' ? true : null">
+        <option *ngFor="let docente of docentes" [value]="docente.nome">
+          {{ docente.nome }}
+        </option>
+      </select>
+      <div *ngIf="formCadastro.get('docente')?.invalid && (formCadastro.get('docente')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+
+
+    <button type="submit" class="cadastro-btn">Cadastrar</button>
+    <button type="button" class="cadastro-btn" disabled>Editar</button>
+    <button type="button" class="cadastro-btn" disabled>Excluir</button>
+  </form>
+</div>

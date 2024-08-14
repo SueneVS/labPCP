@@ -1,7 +1,7 @@
 <app-toolbar></app-toolbar>
 
-<div class="container mt-5">
-  <h2>Cadastro de Docente</h2>
+<div *ngIf="Admin()"class="container mt-5">
+  <h2>Cadastro de  Docente</h2>
   <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="nomeCompleto">Nome Completo</label>

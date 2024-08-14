@@ -101,6 +101,10 @@
       "materia": "TypeScript"
     }
   ],
-  "cadastro-docente": [],
-  "cadastro-aluno": []
+  "cadastro-docente": [
+
+  ],
+  "cadastro-aluno": [
+
+  ]
 }

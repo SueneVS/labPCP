@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CadastroDocenteComponent implements OnInit {
   formCadastro!: FormGroup;
-  userPerfil: string | null = null;
+  userPerfil!: string;
   materiasDisponiveis = [
     { id: '1', materia: 'HTML' },
     { id: '2', materia: 'CSS' },
@@ -79,7 +79,6 @@ export class CadastroDocenteComponent implements OnInit {
       const userObj = JSON.parse(user);
       this.userPerfil = userObj.perfil;
     }
-    console.log('User Perfil:', this.userPerfil);
   }
 
   buscarEndereco(): void {
