@@ -1,0 +1,36 @@
+.container {
+  max-width: 80%;
+  background-color: #24535f4e;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.search-bar {
+  margin-bottom: 1rem;
+}
+
+.card {
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.listagem-btn {
+  background-color: #3d7f8f;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem 0 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #58a3b6;
+  }
+}

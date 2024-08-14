@@ -1,2 +1,32 @@
 <app-toolbar></app-toolbar>
-<p>listagem-docentes works!</p>
+
+<div *ngIf="Admin()" class="container mt-5">
+  <h2>Listagem de Docentes</h2>
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Pesquisar por nome ou identificador" class="form-control">
+  </div>
+
+  <div *ngIf="docentesFiltrados.length > 0; else noData">
+    <div class="card" *ngFor="let docente of docentesFiltrados">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-2">
+            <p><strong>ID:</strong> {{ docente.id }}</p>
+          </div>
+          <div class="col-md-4">
+            <p><strong>Nome:</strong> {{ docente.nome }}</p>
+          </div>
+          <div class="col-md-4">
+            <p><strong>Email:</strong> {{ docente.email || 'N/A' }}</p>
+          </div>
+          <div class="col-md-2 text-md-right">
+            <button class="listagem-btn" (click)="verMais(docente.id)">Ver mais</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noData>
+    <p>Nenhum docente encontrado.</p>
+  </ng-template>
+</div>
