@@ -1,2 +1,34 @@
 <app-toolbar></app-toolbar>
-<p>notas works!</p>
+
+<div *ngIf="Aluno()" class="container mt-5">
+  <h2>Histórico de Notas</h2>
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Pesquisar por turma, docente, matéria ou avaliação" class="form-control">
+  </div>
+
+  <div *ngIf="notasFiltradas.length > 0; else noData">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Turma</th>
+          <th>Docente</th>
+          <th>Matéria</th>
+          <th>Avaliação</th>
+          <th>Nota</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let nota of notasFiltradas">
+          <td>{{ nota.turma }}</td>
+          <td>{{ nota.docente }}</td>
+          <td>{{ nota.materia }}</td>
+          <td>{{ nota.avaliacao }}</td>
+          <td>{{ nota.nota }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noData>
+    <p>Nenhum histórico de notas encontrado.</p>
+  </ng-template>
+</div>
