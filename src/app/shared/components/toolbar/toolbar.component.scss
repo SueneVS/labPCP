@@ -1,0 +1,109 @@
+.toolbar {
+  background: #24535f;
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .toolbar-content {
+    display: flex;
+    flex: 1;
+    justify-content:space-between;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .toolbar-sidebar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .toolbar-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 120px;
+        height: auto;
+      }
+    }
+
+    .toolbar-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      .toolbar-titulo {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #fff;
+        margin: 0;
+      }
+    }
+
+    .toolbar-usuario {
+      display: flex;
+      align-items: center;
+      .toolbar-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+        margin-right: 1rem;
+        .toolbar-info-name {
+          font-size: 1rem;
+          font-weight: bold;
+          color: #fff;
+          margin: 0;
+        }
+        .toolbar-info-perfil {
+          font-size: 0.875rem;
+          color: #fff;
+          margin: 0;
+        }
+      }
+      .toolbar-img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+
+  @media (max-width: 576px) {
+    .toolbar-content{
+      .toolbar-logo {
+        margin-left: auto;
+        img {
+          width: 80px;
+        }
+      }
+      .toolbar-center{
+        margin-left: auto;
+        .toolbar-titulo{
+          font-size: 0.875rem;
+        }
+      }
+      .toolbar-usuario {
+        margin-left: auto;
+        .toolbar-info {
+          .toolbar-info-name {
+            font-size: 0.75rem;
+
+          }
+          .toolbar-info-perfil {
+            font-size: 0.7rem;
+          }
+        }
+        .toolbar-img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}
+

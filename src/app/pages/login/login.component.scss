@@ -1,0 +1,162 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  .login {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+
+    .img-login {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #24535f;
+      order: 1;
+
+      img {
+        max-width: 90%;
+        border-radius: 1rem;
+      }
+    }
+
+    .form-login-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      padding: 2rem;
+      order: 2;
+
+      .titulo-login {
+        text-align: center;
+        width: 100%;
+
+        h1 {
+          color: #24535f;
+          margin: 2rem;
+          font-size: 2rem;
+          font-weight: bold;
+        }
+
+        p {
+          color: #24535f;
+        }
+      }
+
+      .form-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        padding: 2rem;
+        width: 100%;
+
+        .card-form {
+          width: 100%;
+          max-width: 400px;
+          border-radius: 1rem;
+          padding: 2rem;
+          background: #fff;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+          h2 {
+            font-size: 2rem;
+            color: #58a3b6;
+            text-align: center;
+            margin: 0;
+          }
+
+          .form-control {
+            border: 2px solid #58a3b6;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+          }
+
+          .form-buttons {
+            display: flex;
+            gap: 1rem;
+
+            .btn {
+              border: none;
+              border-radius: 0.5rem;
+              padding: 0.5rem;
+              cursor: pointer;
+
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+
+            .btn-entrar {
+              color: #fff;
+              background: #3d7f8f;
+              flex: 1;
+            }
+
+            .btn-criar-conta {
+              background: #fff;
+              color: #58a3b6;
+              border: 2px solid #58a3b6;
+              flex: 1;
+            }
+          }
+
+          .link-recuperar-senha {
+            color: #333;
+
+            &:hover {
+              color: #58a3b6;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .login {
+      flex-direction: column;
+
+      .form-login-container {
+        order: 2;
+        padding: 1rem;
+
+        .form-login .card {
+          max-width: 90%;
+        }
+      }
+
+      .img-login {
+        order: 1;
+
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .login {
+      flex-direction: column;
+
+      .form-login-container {
+        padding: 1rem;
+
+        .form-login .card {
+          max-width: 95%;
+        }
+      }
+    }
+  }
+}

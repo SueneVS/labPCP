@@ -1,0 +1,156 @@
+<app-toolbar></app-toolbar>
+
+<div *ngIf="Admin()" class="container mt-5">
+  <h2>Cadastro de Aluno</h2>
+  <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nomeCompleto">Nome Completo</label>
+      <input type="text" id="nomeCompleto" class="form-control" formControlName="nomeCompleto">
+      <div *ngIf="formCadastro.get('nomeCompleto')?.invalid && (formCadastro.get('nomeCompleto')?.touched)" class="text-danger">
+        Nome Completo é obrigatório e deve ter entre 8 e 64 caracteres.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="genero">Gênero</label>
+      <select id="genero" class="form-control" formControlName="genero">
+        <option value="" disabled>Selecione...</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="outro">Outro</option>
+      </select>
+      <div *ngIf="formCadastro.get('genero')?.invalid && (formCadastro.get('genero')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dataNascimento">Data de Nascimento</label>
+      <input type="date" id="dataNascimento" class="form-control" formControlName="dataNascimento">
+      <div *ngIf="formCadastro.get('dataNascimento')?.invalid && (formCadastro.get('dataNascimento')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cpf">CPF</label>
+      <input type="text" id="cpf" class="form-control" formControlName="cpf" placeholder="000.000.000-00">
+      <div *ngIf="formCadastro.get('cpf')?.invalid && formCadastro.get('cpf')?.touched" class="text-danger">
+        CPF é obrigatório e deve seguir o formato XXX.XXX.XXX-XX.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="rg">RG com Órgão Expedidor</label>
+      <input type="text" id="rg" class="form-control" formControlName="rg" maxlength="20">
+      <div *ngIf="formCadastro.get('rg')?.invalid && (formCadastro.get('rg')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="estadoCivil">Estado Civil</label>
+      <select id="estadoCivil" class="form-control" formControlName="estadoCivil">
+        <option value="" disabled>Selecione...</option>
+        <option value="solteiro">Solteiro</option>
+        <option value="casado">Casado</option>
+        <option value="divorciado">Divorciado</option>
+        <option value="viuvo">Viúvo</option>
+      </select>
+      <div *ngIf="formCadastro.get('estadoCivil')?.invalid && (formCadastro.get('estadoCivil')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input type="text" id="telefone" class="form-control" formControlName="telefone" placeholder="(99) 99999-9999">
+      <div *ngIf="formCadastro.get('telefone')?.invalid && (formCadastro.get('telefone')?.touched)" class="text-danger">
+        Telefone é obrigatório e deve seguir o formato (99) 99999-9999.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" class="form-control" formControlName="email">
+      <div *ngIf="formCadastro.get('email')?.invalid && (formCadastro.get('email')?.touched)" class="text-danger">
+        O endereço de e-mail deve ser válido.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" class="form-control" formControlName="senha" minlength="8">
+      <div *ngIf="formCadastro.get('senha')?.invalid && (formCadastro.get('senha')?.touched)" class="text-danger">
+        Preenchimento é obrigatório, no mínimo 8 caracteres
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="naturalidade">Naturalidade</label>
+      <input type="text" id="naturalidade" class="form-control" formControlName="naturalidade">
+      <div *ngIf="formCadastro.get('naturalidade')?.invalid && (formCadastro.get('naturalidade')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="turmas">Turma</label>
+      <select id="turmas" formControlName="turmas" class="form-control" multiple>
+        <option *ngFor="let turma of turmasDisponiveis" [value]="turma.id">
+          {{ turma.turma }}
+        </option>
+      </select>
+      <div *ngIf="formCadastro.get('turmas')?.invalid && formCadastro.get('turmas')?.touched" class="text-danger">
+        Pelo menos uma turma deve ser selecionada.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cep">CEP</label>
+      <input type="text" id="cep" class="form-control" formControlName="cep" placeholder="00000-000"
+        (blur)="buscarEndereco()">
+    </div>
+
+    <div class="form-group">
+      <label for="logradouro">Logradouro</label>
+      <input type="text" id="logradouro" class="form-control" formControlName="logradouro" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="numero">Número</label>
+      <input type="text" id="numero" class="form-control" formControlName="numero">
+      <div *ngIf="formCadastro.get('numero')?.invalid && (formCadastro.get('numero')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="complemento">Complemento</label>
+      <input type="text" id="complemento" class="form-control" formControlName="complemento">
+      <div *ngIf="formCadastro.get('complemento')?.invalid && (formCadastro.get('complemento')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="bairro">Bairro</label>
+      <input type="text" id="bairro" class="form-control" formControlName="bairro" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="cidade">Cidade</label>
+      <input type="text" id="cidade" class="form-control" formControlName="cidade" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="estado">Estado</label>
+      <input type="text" id="estado" class="form-control" formControlName="estado" readonly>
+    </div>
+
+    <button type="submit" class="cadastro-btn">Cadastrar</button>
+    <button type="button" class="cadastro-btn" disabled>Editar</button>
+    <button type="button" class="cadastro-btn" disabled>Excluir</button>
+  </form>
+</div>
+

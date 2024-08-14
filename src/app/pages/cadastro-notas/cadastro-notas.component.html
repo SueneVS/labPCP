@@ -1,0 +1,80 @@
+<app-toolbar></app-toolbar>
+
+<div *ngIf="Admin() || Docente()" class="container mt-5">
+  <h2>Cadastro de Notas</h2>
+  <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="turma">Turma</label>
+      <select id="turma" formControlName="turma" class="form-control">
+        <option *ngFor="let turma of turmas" [value]="turma.nome">
+          {{ turma.nome }}
+        </option>
+      </select>
+      <div *ngIf="formCadastro.get('turma')?.invalid && (formCadastro.get('turma')?.touched)" class="text-danger">
+        É obrigatório selecionar a turma
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="docente">Docente</label>
+      <select id="docente" formControlName="docente" class="form-control" [attr.disabled]="userPerfil === 'Docente' ? true : null">
+        <option *ngFor="let docente of docentes" [value]="docente.nome">
+          {{ docente.nome }}
+        </option>
+      </select>
+      <div *ngIf="formCadastro.get('docente')?.invalid && (formCadastro.get('docente')?.touched)" class="text-danger">
+        A seleção do docente é obrigatória
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="materia">Matéria</label>
+      <select id="materia" formControlName="materia" class="form-control">
+        <option *ngFor="let materia of materias" [value]="materia.nome">
+          {{ materia.nome }}
+        </option>
+      </select>
+      <div *ngIf="formCadastro.get('materia')?.invalid && (formCadastro.get('materia')?.touched)" class="text-danger">
+        A seleção da matéria é obrigatória
+      </div>
+    </div>
+<div class="form-group">
+      <label for="nomeAvaliacao">Nome da Avaliação</label>
+      <input type="text" id="nomeAvaliacao" class="form-control" formControlName="nomeAvaliacao">
+      <div *ngIf="formCadastro.get('nomeAvaliacao')?.invalid && (formCadastro.get('nomeAvaliacao')?.touched)" class="text-danger">
+        Nome da Avaliação é obrigatório.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="aluno">Aluno</label>
+      <select id="aluno" formControlName="aluno" class="form-control">
+        <option *ngFor="let aluno of alunos" [value]="aluno.nome">
+          {{ aluno.nome }}
+        </option>
+      </select>
+      <div *ngIf="formCadastro.get('aluno')?.invalid && (formCadastro.get('aluno')?.touched)" class="text-danger">
+        A seleção é obrigatória
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nota">Nota</label>
+      <input type="number" id="nota" class="form-control" formControlName="nota" min="0" max="10" step="0.1">
+      <div *ngIf="formCadastro.get('nota')?.invalid && (formCadastro.get('nota')?.touched)" class="text-danger">
+        Preenchimento da nota é obrigatório, sendo 0 a 10.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dataAvaliacao">Data da Avaliação</label>
+      <input type="datetime-local" id="dataAvaliacao" class="form-control" formControlName="dataAvaliacao">
+      <div *ngIf="formCadastro.get('dataAvaliacao')?.invalid && (formCadastro.get('dataAvaliacao')?.touched)" class="text-danger">
+        Preenchimento é obrigatório
+      </div>
+    </div>
+
+    <button type="submit" class="cadastro-btn">Cadastrar</button>
+    <button type="button" class="cadastro-btn" disabled>Editar</button>
+    <button type="button" class="cadastro-btn" disabled>Excluir</button>
+  </form>
+</div>
