@@ -74,7 +74,7 @@
       <label for="email">E-mail</label>
       <input type="email" id="email" class="form-control" formControlName="email">
       <div *ngIf="formCadastro.get('email')?.invalid && (formCadastro.get('email')?.touched)" class="text-danger">
-        Preenchimento é obrigatório
+        O e-mail é obrigatório e deve ser um endereço de e-mail válido.
       </div>
     </div>
 

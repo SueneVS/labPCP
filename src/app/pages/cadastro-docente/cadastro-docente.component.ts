@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CadastroDocenteComponent implements OnInit {
   formCadastro!: FormGroup;
-  isEditing = false;
+  userPerfil: string | null = null;
   materiasDisponiveis = [
     { id: '1', materia: 'HTML' },
     { id: '2', materia: 'CSS' },
@@ -73,6 +73,13 @@ export class CadastroDocenteComponent implements OnInit {
       estado: new FormControl(''),
       materias: new FormControl([], Validators.required)
     });
+
+    const user = sessionStorage.getItem('user');
+    if (user) {
+      const userObj = JSON.parse(user);
+      this.userPerfil = userObj.perfil;
+    }
+    console.log('User Perfil:', this.userPerfil);
   }
 
   buscarEndereco(): void {
@@ -142,5 +149,17 @@ export class CadastroDocenteComponent implements OnInit {
         console.log(control.errors);
       }
     });
+  }
+
+  Admin(): boolean {
+    return this.userPerfil === 'Administrador';
+  }
+
+  Docente(): boolean {
+    return this.userPerfil === 'Docente';
+  }
+
+  Aluno(): boolean {
+    return this.userPerfil === 'Aluno';
   }
 }

@@ -19,10 +19,6 @@ button {
   margin-right: 1rem;
 }
 
-.invalid-field {
-  border: 2px solid red;
-}
-
 
 .cadastro-btn {
   background-color: #3d7f8f;
@@ -40,7 +36,7 @@ button {
 }
 
 .cadastro-btn:disabled {
-  cursor: not-allowed; 
+  cursor: not-allowed;
   opacity: 0.6;
 }
 
